@@ -1,13 +1,339 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  
   <script src="https://kit.fontawesome.com/604cf2d179.js" crossorigin="anonymous"></script>
+  <style>
+     @charset "UTF-8";
+
+ /*Inicio Configurações Gerais*/
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Arial, Helvetica, sans-serif;
+ }
+
+ /*Fim Configurações Gerais*/
+
+ header.site-header {
+     background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255)), url(imagens/bg-header-mobile.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
+ /*Inicio Configurações header*/
+
+ header.site-header img.logo {
+     display: block;
+     margin: auto;
+     padding: 100px 0 60px 0px;
+ }
+
+ /*Fim Configurações header*/
+
+
+ /*Inicio Configurações main*/
+
+ main {
+     display: flex;
+     flex-flow: column nowrap;
+     width: 100%;
+     overflow: hidden;
+ }
+
+ /*Fim Configurações main*/
+
+ /*Inicio Configurações section*/
+
+
+ section h1 {
+     color: #4c545d;
+     text-align: center;
+     margin-bottom: 20px;
+     font-size: 2.5em;
+ }
+
+ section p {
+     line-height: 30px;
+     text-align: center;
+     margin: 30px 0 60px 0;
+     color: hsl(201, 11%, 66%);
+ }
+
+ div.cta {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-bottom: 100px;
+     gap: 20px;
+     text-align: center;
+ }
+
+ div.cta a {
+     color: #ffffff;
+     padding: 15px;
+     width: 100%;
+     border-radius: 20px;
+     text-decoration: none;
+     font-size: 1.2em;
+ }
+
+ div.cta a.for-ios {
+     background-color: #26baa4;
+     transition: 0.3s;
+ }
+
+ div.cta a.for-ios:hover {
+     border-bottom: 3px solid #1CA592;
+     transform: translate(3px, -3px);
+     box-shadow: 0px 0px 5px #26baa4;
+ }
+
+ div.cta a.for-mac {
+     background-color: #6173ff;
+     transition: 0.3s;
+ }
+
+ div.cta a.for-mac:hover {
+     border-bottom: 3px solid #5467E5;
+     transform: translate(3px, -3px);
+     box-shadow: 0px 0px 5px #6173ff;
+ }
+
+ article.feature {
+     width: 80%;
+     max-width: 1100px;
+     margin-inline: auto;
+     /* centraliza horizontalmente */
+ }
+
+ article.feature-flex-container {
+     width: 80%;
+     margin: auto;
+ }
+
+ article.feature h2 {
+     color: rgb(76, 84, 93);
+     text-align: center;
+     font-size: 2em;
+ }
+
+ article.feature h3 {
+     color: rgb(76, 84, 93);
+     text-align: center;
+     font-size: 1.5em;
+ }
+
+ article.feature p {
+     line-height: 30px;
+     text-align: center;
+     margin: 20px 0 60px 0;
+     color: rgb(159, 171, 178);
+ }
+
+ div.feature-media {
+     margin-bottom: 100px;
+ }
+
+ div.feature-media img {
+     width: 100%;
+ }
+
+ div.feature-item {
+     text-align: center;
+ }
+
+ div.feature-item h3 {
+     color: rgb(76, 84, 93);
+     font-size: 1.5em;
+ }
+
+ div.feature-item p {
+     line-height: 30px;
+     margin: 20px 0 60px 0;
+     color: rgb(159, 171, 178);
+ }
+
+ div.feature-item i {
+     margin: 50px 0;
+     font-size: 50px;
+     color: #757e84;
+ }
+
+ div.clients {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ div.clients li {
+     gap: 80px;
+     margin: 150px 0;
+     list-style: none;
+ }
+
+ /*Fim Configurações section*/
+
+ /*Inicio Configurações footer*/
+
+ footer.contact {
+     background-color: #F5F6F8;
+ }
+
+ img.logo-footer {
+     margin: auto;
+     display: block;
+     padding: 50px 0;
+ }
+
+ nav ul {
+     list-style: none;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 20px;
+ }
+
+ nav a {
+     text-decoration: none;
+     color: #4c545d;
+ }
+
+ nav a:hover {
+     text-decoration: underline;
+ }
+
+ div.icons ul {
+     display: flex;
+     justify-content: center;
+     list-style: none;
+     gap: 30px;
+     padding: 50px 0;
+ }
+
+ div.icons a {
+     font-size: 40px;
+     color: #9fabb2;
+     transition: 0.3s;
+ }
+
+ div.icons a:hover {
+     color: rgb(76, 84, 93);
+ }
+
+ /*Fim Configurações footer*/
+
+ @media screen and (min-width: 800px) {
+     div.cta {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+     }
+
+     div.cta a {
+         width: 250px;
+     }
+
+     article.feature-flex-container {
+         display: flex;
+         flex-direction: row;
+         gap: 100px;
+         width: 100%;
+         margin: 0;
+         margin-inline: 0;
+     }
+
+     article.feature-flex-container>div.feature-media {
+         display: flex;
+         flex-direction: row;
+         margin-left: -2%;
+     }
+
+     div.feature-flexible {
+         padding-right: 60px;
+     }
+
+     div.feature-item h3 {
+         text-align: left;
+         font-size: 1.3em;
+     }
+
+     div.feature-item p {
+         font-size: 1em;
+         text-align: left;
+     }
+
+     div.feature-flex {
+         display: flex;
+         flex-direction: row;
+         gap: 30px;
+     }
+
+     div.feature-flex h3 {
+         text-align: center;
+     }
+
+     div.feature-flex p {
+         text-align: center;
+     }
+
+     div.clients ul {
+         display: flex;
+         flex-direction: row;
+         gap: 20px;
+     }
+
+     div.clients img {
+         width: 120px;
+     }
+
+     footer.contact {
+         display: grid;
+         grid-template-columns: 1fr 2fr 1fr;
+         align-items: center;
+         padding: 0 40px;
+         gap: 10px;
+     }
+
+
+     footer a {
+         line-height: 30px;
+     }
+
+     img.logo-footer {
+         width: 70px;
+     }
+
+     div.support ul {
+         flex-direction: row;
+         flex-wrap: nowrap;
+         display: flex;
+         justify-content: space-between;
+         gap: 20px;
+     }
+
+     div.support ul li {
+         flex: 1 1 0;
+         min-width: 0;
+     }
+
+     div.icons ul {
+         justify-content: flex-end;
+         display: flex;
+         flex-direction: row;
+         min-width: 0;
+     }
+ }
+  </style>
   <title>Página inicial do Clipboard</title>
 </head>
+
 <body>
   <header class="site-header">
     <img class="logo" src="imagens/logo.svg" alt="Logo da Empresa">
@@ -15,136 +341,145 @@
 
   <main>
     <section class="intro">
-      <h1>Um histórico de tudo o que você copia</h1>
-      <p>
-        O Clipboard permite que você acompanhe e organize tudo o que
-        você copia. Acesse instantaneamente sua área de transferência em todos os seus dispositivos.
-      </p>
-
-      <div class="cta">
-            <a href="#" class="for-ios">Baixar para iOS</a>
-            <a href="#" class="for-mac">Baixar para Mac</a>
-      </div>
-
+      <article class="feature">
+        <h1>Um histórico de tudo o que você copia</h1>
+        <p>
+          O Clipboard permite que você acompanhe e organize tudo o que
+          você copia. Acesse instantaneamente sua área de transferência em todos os seus dispositivos.
+        </p>
+        <div class="cta">
+          <a href="#" class="for-ios">Baixar para iOS</a>
+          <a href="#" class="for-mac">Baixar para Mac</a>
+        </div>
+      </article>
     </section>
 
     <section class="features">
       <article class="feature">
-          <h2>Mantenha o controle dos seus trechos</h2>
-          <p>
-            O Clipboard armazena instantaneamente qualquer item que você copia na nuvem,
-            o que significa que você pode acessar seus trechos imediatamente em todos os seus
-            dispositivos. Nossos aplicativos para Mac e iOS ajudam você a organizar tudo.
-          </p>
+        <h2>Mantenha o controle dos seus trechos</h2>
+        <p>
+          O Clipboard armazena instantaneamente qualquer item que você copia na nuvem,
+          o que significa que você pode acessar seus trechos imediatamente em todos os seus
+          dispositivos. Nossos aplicativos para Mac e iOS ajudam você a organizar tudo.
+        </p>
+      </article>
 
-          <div class="feature-media">
-            <img src="imagens/image-computer.png" alt="Imagem de um Computador">
+      <article class="feature-flex-container">
+        <div class="feature-media">
+          <img src="imagens/image-computer.png" alt="Imagem de um Computador">
+        </div>
+        <div class="feature-flexible">
+          <div class="feature-item">
+            <h3>Busca rápida</h3>
+            <p>Pesquise facilmente seus trechos por conteúdo, categoria, endereço da web, aplicativo e muito mais.</p>
           </div>
-
-      </article>
-
-      <article class="feature">
-          <h3>Busca rápida</h3>
-          <p>Pesquise facilmente seus trechos por conteúdo, categoria, endereço da web, aplicativo e muito mais.</p>
-      </article>
-
-      <article class="feature">
-        <h3>Sincronização com iCloud</h3>
-        <p>Salva e sincroniza instantaneamente os trechos em todos os seus dispositivos.</p>
-      </article>
-
-      <article class="feature">
-          <h3>Histórico completo</h3>
-          <p>Recupere qualquer trecho desde o primeiro momento em que você começou a usar o aplicativo.</p>
-      </article>
-
-      <article class="feature">
-          <h2>Acesse o Clipboard em qualquer lugar</h2>
-          <p>
-            Esteja você em movimento ou no computador, é possível acessar todos os seus trechos
-            do Clipboard com apenas alguns cliques.
-          </p>
-
-          <div class="feature-media">
-            <img src="imagens/image-devices.png" alt="Imagem de dispositivos">
+          <div class="feature-item">
+            <h3>Sincronização com iCloud</h3>
+            <p>Salva e sincroniza instantaneamente os trechos em todos os seus dispositivos.</p>
           </div>
+          <div class="feature-item">
+            <h3>Histórico completo</h3>
+            <p>Recupere qualquer trecho desde o primeiro momento em que você começou a usar o aplicativo.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature">
+        <h2>Acesse o Clipboard em qualquer lugar</h2>
+        <p>
+          Esteja você em movimento ou no computador, é possível acessar todos os seus trechos
+          do Clipboard com apenas alguns cliques.
+        </p>
+
+        <div class="feature-media">
+          <img src="imagens/image-devices.png" alt="Imagem de dispositivos">
+        </div>
 
       </article>
 
       <article class="feature">
-          <h2>Potencialize seu fluxo de trabalho</h2>
-          <p>Temos as ferramentas para aumentar sua produtividade.</p>
+        <h2>Potencialize seu fluxo de trabalho</h2>
+        <p>Temos as ferramentas para aumentar sua produtividade.</p>
 
-          <aside>
+        <div class="feature-flex">
+          <div class="feature-item">
             <i class="fa-solid fa-scroll"></i>
             <h3>Crie listas de bloqueio</h3>
             <p>Garanta que informações sensíveis nunca cheguem à sua área de transferência excluindo certas fontes.</p>
-          </aside>
-
-          <aside>
+          </div>
+          <div class="feature-item">
             <i class="fa-solid fa-font"></i>
             <h3>Trechos de texto simples</h3>
             <p>Remova formatações indesejadas do texto copiado para manter uma aparência consistente.</p>
-          </aside>
-
-          <aside>
+          </div>
+          <div class="feature-item">
             <i class="fa-regular fa-eye"></i>
             <h3>Pré-visualização rápida</h3>
             <p>Visualize rapidamente todos os trechos na sua área de transferência para fácil acesso.</p>
-          </aside>
-
-          <div class="clients">
-            <img src="imagens/logo-google.png" alt="logo da Google">
-            <img src="imagens/logo-ibm.png" alt="Logo do IBM">
-            <img src="imagens/logo-microsoft.png" alt="Logo da Microsoft">
-            <img src="imagens/logo-hp.png" alt="Logo da HP">
-            <img src="imagens/logo-vector-graphics.png" alt="Logo da Vector Grapichs">
           </div>
+        </div>
+
+        <div class="clients">
+          <div class="feature-flex">
+            <ul>
+              <li><img src="imagens/logo-google.png" alt="logo da Google"></li>
+              <li><img src="imagens/logo-ibm.png" alt="Logo do IBM"></li>
+              <li><img src="imagens/logo-microsoft.png" alt="Logo da Microsoft"></li>
+              <li><img src="imagens/logo-hp.png" alt="Logo da HP"></li>
+              <li><img src="imagens/logo-vector-graphics.png" alt="Logo da Vector Grapichs"></li>
+            </ul>
+          </div>
+        </div>
 
       </article>
 
       <article class="feature">
-          <h2>Clipboard para iOS e Mac OS</h2>
-          <p>
-            Disponível gratuitamente na App Store. Baixe para Mac ou iOS, sincronize com o iCloud
-            e você estará pronto para começar a adicionar itens à sua área de transferência.
-          </p>
+        <h2>Clipboard para iOS e Mac OS</h2>
+        <p>
+          Disponível gratuitamente na App Store. Baixe para Mac ou iOS, sincronize com o iCloud
+          e você estará pronto para começar a adicionar itens à sua área de transferência.
+        </p>
 
-          <div class="cta">
-            <a href="#" class="for-ios">Baixar para iOS</a>
-            <a href="#" class="for-mac">Baixar para Mac</a>
-          </div>
+        <div class="cta">
+          <a href="#" class="for-ios">Baixar para iOS</a>
+          <a href="#" class="for-mac">Baixar para Mac</a>
+        </div>
 
       </article>
     </section>
   </main>
 
-   <footer class="contact">
-      <img class="logo-footer" src="imagens/logo.svg" alt="Logo da Empresa">
+  <footer class="contact">
+    <img class="logo-footer" src="imagens/logo.svg" alt="Logo da Empresa">
 
-      <div class="support">
-          <nav>
-              <ul>
-                  <li><a href="#">Perguntas frequentes</a></li>
-                  <li><a href="#">Fale conosco</a></li>
-                  <li><a href="#">Política de privacidade</a></li>
-                  <li><a href="#">Kit de imprensa</a></li>
-                  <li><a href="#">Guia de instalação</a></li>
-              </ul>
-          </nav>
-      </div>
-
-      <div class="icons">
+    <div class="support">
+      <div class="feature-flex">
         <nav>
-            <ul>
-                <li><a href="#" aria-label="Perfil do Clipboard no Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
-                <li><a href="#" aria-label="Perfil do Clipboard no Twitter"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="#" aria-label="Perfil do Clipboard no Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
+          <ul>
+            <li><a href="#">Perguntas frequentes</a></li>
+            <li><a href="#">Fale conosco</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">Kit de imprensa</a></li>
+            <li><a href="#">Guia de instalação</a></li>
+          </ul>
         </nav>
       </div>
+    </div>
 
-    </footer>
+    <div class="icons">
+      <div class="feature-flex">
+        <nav>
+          <ul>
+            <li><a href="#" aria-label="Perfil do Clipboard no Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li><a href="#" aria-label="Perfil do Clipboard no Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#" aria-label="Perfil do Clipboard no Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </footer>
 </body>
 
 </html>
